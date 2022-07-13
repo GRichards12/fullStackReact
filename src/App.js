@@ -14,22 +14,23 @@ const App = () => {
 
   useEffect(() => {
     fetchImages();
-  },[user]);
+  },[]);
 
   return (
     <div className="App">
-      <SignIn signedIn={signedIn} setSignedIn={setSignedIn} />
-      {photos.map((item, index) => {
+      <button onClick={()=>setSignedIn(!signedIn)}>{!signedIn?<span>Sign in</span>:<span>Sign out</span>}</button>
+      {signedIn?
+      photos.map((item, index) => {
         return (
           <div>
-            {signedIn?
+            
             <div>look it's images
             <h2>{item.author}</h2>
             <img alt= "best image you've ever seen" src={item.download_url} /></div>
-            :<span>please sign in</span>}
+           
           </div>
         );
-      })}
+      }) :<span>please sign in</span>}
       </div>
   )}
 export default App;
