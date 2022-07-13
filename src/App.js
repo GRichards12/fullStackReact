@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import SignIn from "./SignIn";
 
 const App = () => {
   const [photos, setPhotos] = useState([]);
@@ -23,11 +22,8 @@ const App = () => {
       photos.map((item, index) => {
         return (
           <div>
-            
-            <div>look it's images
+            <img alt= "best image you've ever seen" src={item.download_url} key={index}/>
             <h2>{item.author}</h2>
-            <img alt= "best image you've ever seen" src={item.download_url} /></div>
-           
           </div>
         );
       }) :<span>please sign in</span>}
