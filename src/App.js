@@ -5,7 +5,7 @@ import "./App.css";
 const App = () => {
   const [photos, setPhotos] = useState([]);
   const [signedIn, setSignedIn] = useState(false);
-  const [user, setUser] = useState({username:"Signed out",password:"undefined", email:"undefined"});
+  const [user, setUser] = useState({username:"Signed out", email:"undefined", password:"undefined" });
 
   const fetchImages = async () => {
     const response = await fetch("https://picsum.photos/v2/list");
