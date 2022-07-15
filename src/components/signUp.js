@@ -1,25 +1,29 @@
 import { useState } from "react";
-import { signIn } from "../utils";
+import { signUp } from "../utils";
 
-export const SignIn = ({ setUser, setSignedIn }) => {
+export const SignUp = ({ setUser, setSignedIn }) => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitSignIn = async (event) => {
+  const submitSignUp = async (event) => {
     event.preventDefault();
     // setUser(username,email,password);
-    await signIn(username, password, setUser, setSignedIn);
+    await signUp(username, email, password, setUser, setSignedIn);
   };
 
   return (
-    <form onSubmit={submitSignIn}>
-        <h1>Login:</h1>
-        <p>Username:</p>
+    <form onSubmit={submitSignUp}>
+      <h1>Sign up:</h1>
+      <p>Username:</p>
       <input onChange={(event) => setUsername(event.target.value)} />
-        <p>Password:</p>
+      <p>Email:</p>
+      <input onChange={(event) => setEmail(event.target.value)} />
+      <p>Password:</p>
       <input onChange={(event) => setPassword(event.target.value)} />
       <br></br>
       <button type="submit">Submit</button>
     </form>
   );
 };
+
