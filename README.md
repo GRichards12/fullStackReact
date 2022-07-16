@@ -1,5 +1,7 @@
 # Front end component of my full stack app
 
+### Full crud is backend only, but this front end provides login and signup!
+
 ## Summary
 
 - This app renders input fields for login and signup to a page with instagram like functionality.
